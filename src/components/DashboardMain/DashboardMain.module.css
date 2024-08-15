@@ -1,0 +1,326 @@
+.DashboardMain {
+    height: calc(100vh - 4rem);
+    overflow-y: auto;
+    /* background-color: yellow; */
+}
+
+.DashboardInner {
+    padding: 50px 35px;
+    /* background-color: red; */
+    overflow-x: auto;
+}
+
+.dashboardFirst,
+.dashboardSecond,
+.dashboardThird,
+.dashboardFourth {
+    margin-bottom: 4rem;
+}
+
+.dashboardFirst h3,
+.dashboardSecond h3,
+.dashboardThird h3,
+.dashboardFourth h3,
+.dashboardFifth h3 {
+    font-family: League Spartan;
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 20.24px;
+    text-align: left;
+    color: #000000;
+    margin-top: 0;
+    margin-bottom: 2rem;
+}
+
+.cards {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.card {
+    width: 262px;
+    height: 114px;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px 0px #00000040;
+    border-radius: 16px;
+    padding: 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.card img {
+    height: 60px;
+    width: 60px;
+}
+
+.cardText h5 {
+    font-family: League Spartan;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 14.72px;
+    text-align: left;
+    color: #202224;
+    margin: 1rem 0;
+    max-width: 95px;
+}
+
+.cardText p {
+    font-family: League Spartan;
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 25.76px;
+    letter-spacing: 1px;
+    text-align: left;
+    color: #202224;
+    margin: 0;
+}
+
+.upcomingTableDiv {
+    border-radius: 14px !important;
+    overflow: hidden;
+}
+
+.upcomingTable thead tr th {
+    font-family: League Spartan;
+    font-size: 14px;
+    font-weight: 800;
+    line-height: 12.88px;
+    text-align: left;
+    color: #FFFFFF;
+    background-color: red;
+    padding: 1.25rem;
+}
+
+.upcomingTable tbody tr td {
+    font-family: League Spartan;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 12.88px;
+    text-align: left;
+    color: #202224;
+    padding: 1.25rem;
+}
+
+.viewButton {
+    border: none;
+    background-color: transparent;
+    outline: none;
+    font-family: League Spartan;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 12.88px;
+    text-align: center;
+    color: #000000;
+    /* text-decoration: underline; */
+    cursor: pointer;
+}
+
+.viewButton:hover {
+    text-decoration: underline;
+}
+
+.callButton {
+    font-family: League Spartan;
+    font-size: 12px;
+    font-weight: 700;
+    /* line-height: 11.04px; */
+    text-align: left;
+    color: #FFFFFF;
+    background-color: #EC1C24;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    width: 100%;
+    padding: 10px 25px;
+    cursor: pointer;
+}
+
+.demandedRepair {
+    border-radius: 8px;
+    border: 1px solid #0000004D;
+    background-color: #FFFFFF;
+    box-shadow: 0px 4px 4px 0px #00000040;
+    padding: 20px 0px 20px 55px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.demandedRepairSecondHeader {
+    width: 700px;
+    height: 54px;
+    border-radius: 0px 8px 0px 0px;
+    background-color: #EC1C24;
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.demandedRepairSecondHeader h5 {
+    font-family: League Spartan;
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 20.24px;
+    text-align: left;
+    color: #FFFFFF;
+    margin: 0;
+    padding: 0px 15px;
+}
+
+.demandedRepairSecondBody {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.demandedRepairContent {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.demandedRepairContent input [type="checkbox"] {
+    height: 18px;
+    width: 18px;
+}
+
+.demandedRepairContent p {
+    font-family: League Spartan;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 12.88px;
+    text-align: left;
+    color: #000000;
+}
+
+.demandedRepairFirst {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 30px;
+}
+
+.demandedRepairFirst img {
+    width: 141px;
+    height: 92px;
+    object-fit: cover;
+}
+
+.avatarImage {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+}
+
+.avatarImage img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.customerDetails {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contactDetails ul {
+    list-style: none;
+    margin: 0;
+    padding-left: 1rem;
+}
+
+.contactDetails ul li {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+
+    font-family: League Spartan;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 12.88px;
+    color: #000000;
+    margin-bottom: 5px;
+}
+
+.managePartsDiv {
+    display: flex;
+    gap: 1rem;
+}
+
+.vehicleParts {
+    width: 262px;
+    height: 266px;
+    border-radius: 8px;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px 0px #00000040;
+    overflow: hidden;
+}
+
+.vehiclePartsHeader {
+    background-color: #EC1C24;
+}
+
+.vehiclePartsHeader h6 {
+    font-family: League Spartan;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 14.72px;
+    text-align: left;
+    color: #FFFFFF;
+    margin: 0;
+    padding: 19px 25px;
+}
+
+.vehiclePartsContent {
+    padding: 10px 25px;
+}
+
+.vehiclePartsContent ul {
+    margin: 0;
+    padding: 0;
+}
+
+.vehiclePartsContent ul li {
+    list-style-type: none;
+    font-family: League Spartan;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 31px;
+    color: #202224;
+}
+
+
+
+
+.managePartsTableDiv {
+    border-radius: 14px !important;
+    overflow: hidden;
+    flex: 1;
+    height: 100%;
+    /*------TODO--------*/
+}
+
+.managePartsTable thead tr th {
+    font-family: League Spartan;
+    font-size: 14px;
+    font-weight: 800;
+    line-height: 12.88px;
+    text-align: left;
+    color: #FFFFFF;
+    background-color: red;
+    padding: 1.25rem;
+}
+
+.managePartsTable tbody tr td {
+    font-family: League Spartan;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 12.88px;
+    text-align: left;
+    color: #202224;
+    padding: 1.25rem;
+}

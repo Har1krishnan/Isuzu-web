@@ -1,0 +1,40 @@
+.Sidebar {
+    height: calc(100vh - 4rem);
+    width: 345px;
+    box-shadow: 5px 0px 5px #00000014;
+    overflow-x: hidden;
+}
+
+.sidebarInner {
+    padding: 50px;
+    overflow-y: auto;
+}
+
+.sidebarInner ul {
+    padding-left: 0;
+    list-style-type: none;
+    margin: 0;
+}
+
+.sidebarInner ul li {
+    padding: 15px 35px 15px 35px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    margin-bottom: 15px;
+    cursor: pointer;
+}
+
+.sidebarInner ul li:hover {
+    background: #ffdbdb;
+}
+
+.sidebarInner ul li span {
+    font-family: League Spartan;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 27px;
+    text-align: left;
+    color: #000000;
+}
