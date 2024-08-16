@@ -182,16 +182,17 @@
     gap: 5px;
 }
 
-.demandedRepairContent input [type="checkbox"] {
+.demandedRepairContent img {
     height: 18px;
     width: 18px;
+    object-fit: cover;
 }
 
 .demandedRepairContent p {
     font-family: League Spartan;
     font-size: 14px;
     font-weight: 500;
-    line-height: 12.88px;
+    /* line-height: 12.88px; */
     text-align: left;
     color: #000000;
 }

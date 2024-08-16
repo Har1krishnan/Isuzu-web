@@ -2,6 +2,9 @@ import React, { useEffect, useState } from 'react'
 import People from '../../Assets/Imgs/People.png'
 import Avatar2 from '../../Assets/Imgs/Avatar2.png'
 import Isuzu1 from '../../Assets/Imgs/Isuzu1.png'
+import GreenCheckbox from '../../Assets/Imgs/CheckboxGreen.png'
+import YellowCheckbox from '../../Assets/Imgs/CheckboxYellow.png'
+import RedCheckbox from '../../Assets/Imgs/CheckboxRed.png'
 import PlaceOutlinedIcon from '@mui/icons-material/PlaceOutlined'
 import PhoneOutlinedIcon from '@mui/icons-material/PhoneOutlined'
 
@@ -20,6 +23,7 @@ import axios from 'axios'
 const DashboardMain = () => {
 
     const [openInfoModal, setOpenInfoModal] = useState(false);
+    const [tableData, setTableData] = useState(null)
     const [modalData, setModalData] = useState(null)
 
     const handleOpenInfoModal = (data) => {
@@ -115,15 +119,15 @@ const DashboardMain = () => {
         },
     ]
 
-    const fetchTableData = () => {
+    const fetchTableData = async () => {
         try {
-            const response = axios.get("http://54.214.126.94/api/list/")
-            console.log(response);
+            const response = await axios.get("http://54.214.126.94/api/list/")
+            setTableData(response.data.data);
         } catch (error) {
             console.log(error);
-
         }
     }
+    // console.log('tableData===>', tableData);
 
     useEffect(() => {
         fetchTableData()
@@ -176,21 +180,21 @@ const DashboardMain = () => {
                                 </TableRow>
                             </TableHead>
                             <TableBody>
-                                {upcomingData.map((row) => (
+                                {tableData?.map((item) => (
                                     <TableRow
-                                        key={row.name}
+                                        key={item.id}
                                         sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                                     >
                                         <TableCell align="left">
-                                            {row.no}
+                                            {item.id}
                                         </TableCell>
-                                        <TableCell align="left">{row.name}</TableCell>
-                                        <TableCell align="left" style={{ fontWeight: "700" }}>{row.tdVehicle}</TableCell>
-                                        <TableCell align="left" style={{ fontWeight: "700" }}>{row.phone}</TableCell>
-                                        <TableCell align="left">{row.email}</TableCell>
-                                        <TableCell align="left">{row.date}</TableCell>
+                                        <TableCell align="left">{item.first_name} {item.last_name}</TableCell>
+                                        <TableCell align="left" style={{ fontWeight: "700" }}>{item.variant}</TableCell>
+                                        <TableCell align="left" style={{ fontWeight: "700" }}>{item.phone_number}</TableCell>
+                                        <TableCell align="left">{item.user_email}</TableCell>
+                                        <TableCell align="left">{item.pickup_date}</TableCell>
                                         <TableCell align="left">
-                                            <button className={styles.viewButton} onClick={() => handleOpenInfoModal(row)}>View</button>
+                                            <button className={styles.viewButton} onClick={() => handleOpenInfoModal(item)}>View</button>
                                         </TableCell>
                                         <TableCell align="left">
                                             <button className={styles.callButton}>Call</button>
@@ -233,27 +237,27 @@ const DashboardMain = () => {
                             </div>
                             <div className={styles.demandedRepairSecondBody}>
                                 <div className={styles.demandedRepairContent}>
-                                    <input type="checkbox" checked readOnly />
+                                    <img src={GreenCheckbox} alt="" />
                                     <p>Engine oil replacement or top-ups as required</p>
                                 </div>
                                 <div className={styles.demandedRepairContent}>
-                                    <input type="checkbox" checked readOnly />
+                                    <img src={GreenCheckbox} alt="" />
                                     <p>Standard and completed vehicle checks </p>
                                 </div>
                                 <div className={styles.demandedRepairContent}>
-                                    <input type="checkbox" checked readOnly />
+                                    <img src={GreenCheckbox} alt="" />
                                     <p>Air filter service or replacement if it needed</p>
                                 </div>
                                 <div className={styles.demandedRepairContent}>
-                                    <input type="checkbox" checked readOnly />
+                                    <img src={YellowCheckbox} alt="" />
                                     <p>Service or replacement of the A/C filter</p>
                                 </div>
                                 <div className={styles.demandedRepairContent}>
-                                    <input type="checkbox" checked readOnly />
+                                    <img src={YellowCheckbox} alt="" />
                                     <p>Oil filter service or replacement</p>
                                 </div>
                                 <div className={styles.demandedRepairContent}>
-                                    <input type="checkbox" checked readOnly />
+                                    <img src={RedCheckbox} alt="" />
                                     <p>Brake service</p>
                                 </div>
                             </div>

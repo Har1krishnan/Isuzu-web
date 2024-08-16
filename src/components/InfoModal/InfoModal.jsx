@@ -7,6 +7,18 @@ const InfoModal = ({ open, handleClose, data }) => {
 
     // console.log(data);
 
+    const timeString = data?.pickup_time;
+    let formattedTime = '';
+
+    if (timeString) {
+        const [hours, minutes] = timeString.split(':');
+        const date = new Date();
+        date.setHours(parseInt(hours), parseInt(minutes));
+
+        const options = { hour: 'numeric', minute: 'numeric', hour12: true };
+        formattedTime = new Intl.DateTimeFormat('en-US', options).format(date);
+    }
+
     return (
         <Modal
             open={open}
@@ -24,42 +36,42 @@ const InfoModal = ({ open, handleClose, data }) => {
                             <p>Name</p>
                             <p>:</p>
                         </div>
-                        <p>{data?.name}</p>
+                        <p>{data?.first_name} {data?.last_name}</p>
                     </div>
                     <div className={styles.modalContentsInner}>
                         <div className={styles.modalContentsFirst}>
                             <p>Vehicle</p>
                             <p>:</p>
                         </div>
-                        <p style={{ fontWeight: "700" }}>{data?.tdVehicle}</p>
+                        <p style={{ fontWeight: "700" }}>{data?.variant}</p>
                     </div>
                     <div className={styles.modalContentsInner}>
                         <div className={styles.modalContentsFirst}>
                             <p>Phone Number</p>
                             <p>:</p>
                         </div>
-                        <p>{data?.phone}</p>
+                        <p>{data?.phone_number}</p>
                     </div>
                     <div className={styles.modalContentsInner}>
                         <div className={styles.modalContentsFirst}>
                             <p>Date</p>
                             <p>:</p>
                         </div>
-                        <p style={{ fontWeight: "700" }}>{data?.date}</p>
+                        <p style={{ fontWeight: "700" }}>{data?.pickup_date}</p>
                     </div>
                     <div className={styles.modalContentsInner}>
                         <div className={styles.modalContentsFirst}>
                             <p>Email</p>
                             <p>:</p>
                         </div>
-                        <p>{data?.email}</p>
+                        <p>{data?.user_email}</p>
                     </div>
                     <div className={styles.modalContentsInner}>
                         <div className={styles.modalContentsFirst}>
                             <p>Time</p>
                             <p>:</p>
                         </div>
-                        <p>{data?.time}</p>
+                        <p>{formattedTime}</p>
                     </div>
                 </div>
             </Box>
